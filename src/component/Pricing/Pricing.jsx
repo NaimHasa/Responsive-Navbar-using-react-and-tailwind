@@ -40,7 +40,7 @@ const Pricing = () => {
     return (
         <div className=''>
             <h1 className='text-center font-extrabold text-4xl text-white bg-slate-400 p-8' >Dest Deal of the Town</h1>
-            <div className='grid grid-cols-3 gap-3 '>
+            <div className='grid md:grid-cols-3 gap-3 '>
                 {
                     pricingOption.map(pricing => <PricingOption key={pricing.id} pricing={pricing}></PricingOption>)
                 }
