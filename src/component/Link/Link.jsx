@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Link = ({ route }) => {
-    const [open, setOpen] = useState(false);
+
     return (
         <div>
-            <li className='mr-12 text-2xl'>
+            <li className='mr-12'>
                 <a href={route.path}>{route.name}</a>
             </li>
         </div>

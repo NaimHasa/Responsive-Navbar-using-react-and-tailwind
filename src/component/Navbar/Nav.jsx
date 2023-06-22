@@ -9,19 +9,18 @@ const Nav = () => {
         { id: 2, name: 'Product', path: '/product' },
         { id: 3, name: 'Orders', path: '/orders' },
         { id: 4, name: 'Contact', path: '/contact' },
-        { id: 4, name: 'About', path: '/about' },
+        { id: 5, name: 'About', path: '/about' },
     ]
     return (
-        <nav >
-            {
-                open ?
-                    <XMarkIcon onClick={() => setOpen(!open)} className="h-6 w-6 text-blue-500" />
-                    :
-                    <Bars3Icon onClick={() => setOpen(!open)} className="h-6 w-6 text-blue-500" />
-            }
+        <nav className='w-full bg-purple-600'>
+            <div onClick={() => setOpen(!open)} className="h-8 w-6 md:hidden ">
+                {
+                    open ? <XMarkIcon /> : <Bars3Icon />
+                }
+            </div>
 
             {/* <span>{!open ? 'open' : 'close'}</span> */}
-            <ul className='md:flex justify-center text-center items-center text-red-500'>
+            <ul className={`md:flex justify-center text-center w-full bg-purple-600 text-white absolute md:static duration-500 ease-in  ${!open ? 'top-6' : 'top-[-120px]'}`}>
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
